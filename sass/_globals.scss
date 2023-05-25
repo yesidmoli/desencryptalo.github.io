@@ -1,0 +1,241 @@
+// Variables de colores
+$color-general: #d8dfe878;
+$color-btn-text: #072b56;
+
+// Mixin para establecer propiedades comunes a varios elementos
+@mixin div-general {
+  width: 40%;
+  height: 50%;
+  padding: 0.5rem;
+}
+@mixin btns{
+    border-radius: 12pt;
+    margin-right: 25px;
+    word-wrap: break-word;
+    min-width: 80px;
+}
+
+// Estilos generales des la página
+body {
+    background: url(../assets/img/34009211_dvn6.jpg) center ;
+    margin: 0;
+    padding: 0;
+}
+
+// Contenedor principal
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+// Estilos del logo
+.logo {
+  display: flex;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  align-items: center;
+
+  .span {
+    font-size: 2.5rem;
+    color: $color-btn-text;
+  }
+}
+
+// Estilos del formulario de ingreso
+.secction-1 {
+  @include div-general();
+  margin-left: 8rem;
+  margin-top: 5rem;
+
+  .texto-1 {
+    @include div-general();
+    border: none;
+    outline: none;
+    background-color: transparent;
+    resize: none;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 100%;
+    color: $color-btn-text;
+    font-size: 1.5rem;
+
+    &::placeholder {
+      color: $color-btn-text;
+      font-size: 1.5rem;
+    }
+  }
+  .condicion{
+    position: absolute;
+  }
+  .condicion::before {
+    content: "❗";
+  }
+  .botones {
+    display: flex;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+
+    .btn-1 {
+        @include btns();
+        background-color: $color-btn-text;
+        
+
+        &:hover {
+            background-color: #cdd9e781;
+            color: $color-btn-text;
+            border-color: $color-btn-text;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .btn-2 {
+      @include btns();
+      color: $color-btn-text;
+      border-color: $color-btn-text;
+
+      &:hover {
+        background-color: $color-btn-text;
+        color: white;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.secction-2 {
+    background-color: $color-general;
+    position: relative;
+    width: 28%;
+    height: 35rem;
+    box-shadow: 0 0 5px rgba(74, 70, 70, 0.48);
+    border-radius: 1rem;
+    margin: -50px 20px 0px 150px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    
+
+    .texto-2 {
+        width: 100%;
+        background: url(../assets/img/Muñeco.png);
+        background-repeat: no-repeat;
+        border: none;
+        height: 500px;
+        font-size: 1.15rem;
+        overflow: auto;
+        resize: none;
+        text-align: justify;
+
+        &::placeholder{
+          color: #072b56;
+          position: absolute;
+          margin-top: 22rem;
+          text-align: center;
+        }
+    }
+        
+    .texto-2:focus {
+        outline: none;
+    }
+    
+    .btn-3 {
+        @include btns();
+        border-color: $color-btn-text;
+        color: $color-btn-text;
+        width: 90%;
+        margin-left: 1rem;
+        
+        &:hover {
+            background-color: $color-btn-text;
+            color: white;
+        }
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+    }    
+}
+footer {
+  margin-top: 1rem;
+  text-align: center; 
+  padding: 20px 0; 
+  color: #072b56;
+
+  h3{
+    font-size: 1.3rem;
+  }
+  #redes-sociales {
+    display: inline;
+  }  
+  #imgIcon{
+    width: 3%;
+  } 
+}
+
+
+
+      
+@media screen and (max-width: 840px)  {
+    
+    
+    .contenedor{
+        max-width: 100%;
+        flex-direction: column;
+    }
+    .secction-1{
+        margin-left: 1rem;
+        width: 100%;
+        max-width: 100%;
+    }
+    .botones{
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-1,.btn-2,.btn-3 {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;  
+      max-width: 100%;
+      min-height: 3rem;
+     
+    }
+    .secction-2{
+        flex: 1;
+        flex-direction: column;
+        margin-left: 1rem;
+        margin-right: auto;
+        width: 95%;
+        max-width: 100%; 
+        height: 15rem;
+        margin-top: 1rem ;
+
+        .texto-2{
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 100%; 
+            height: 8rem; 
+            background: none;
+
+            &::placeholder{
+              color: #072a56a8;
+              position: absolute;
+              margin-top: 0;
+              text-align: center;
+            }
+        }
+      
+        
+    
+    }
+            
+ }
