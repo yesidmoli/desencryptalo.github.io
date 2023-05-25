@@ -204,6 +204,9 @@ footer #imgIcon {
     margin-top: 0;
     text-align: center;
   }
+  footer #imgIcon {
+    width: 10%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
